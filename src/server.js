@@ -17,4 +17,4 @@ mongoose.connect('mongodb+srv://alex:alex@omnistack-sdil6.mongodb.net/test?retry
 app.use(express.json());
 app.use(routes);
 
-app.listen(3000);
+app.listen(3333);
