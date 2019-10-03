@@ -1,6 +1,4 @@
-const Booking = require('../models/Booking'),
-    User = require('../models/User'),
-    Spot = require('../models/Spot');
+const Booking = require('../models/Booking');
 
 module.exports = {
     async store(req, res) {
