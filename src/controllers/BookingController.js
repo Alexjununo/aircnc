@@ -8,19 +8,22 @@ module.exports = {
 
         let booking = await Booking.findOne({
             user: user_id,
-            spot: spot_id
+            spot: spot_id,
         });
 
-        if(!booking) 
+        if (!booking)
             booking = await Booking.create({
                 date: date,
                 approved: null,
                 user: user_id,
-                spot: spot_id
+                spot: spot_id,
             });
 
-        await booking.populate('spot').populate('user').execPopulate();
+        await booking
+            .populate('spot')
+            .populate('user')
+            .execPopulate();
 
         return res.json(booking);
-    }
-}
+    },
+};
