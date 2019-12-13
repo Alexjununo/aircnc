@@ -13,7 +13,7 @@ module.exports = {
 
         if (!booking)
             booking = await Booking.create({
-                date: date,
+                date,
                 approved: null,
                 user: user_id,
                 spot: spot_id,

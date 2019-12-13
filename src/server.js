@@ -2,14 +2,17 @@ const express = require('express'),
     mongoose = require('mongoose'),
     cors = require('cors'),
     path = require('path'),
-    routes = require('./routes')
+    routes = require('./routes');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://alex:alex@omnistack-sdil6.mongodb.net/test?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+mongoose.connect(
+    'mongodb+srv://alex:alex@omnistack-sdil6.mongodb.net/test?retryWrites=true&w=majority',
+    {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    }
+);
 
 // GET, POST, PUT, DELETE
 // req.query = Acessar query params (para filtros)

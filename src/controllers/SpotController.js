@@ -1,5 +1,5 @@
-const Spot = require("../models/Spot"),
-    User = require("../models/User");
+const Spot = require('../models/Spot'),
+    User = require('../models/User');
 
 module.exports = {
     async store(req, res) {
@@ -9,17 +9,17 @@ module.exports = {
             user = await User.findById(user_id);
 
         if (!user)
-            return res.status(400).json({ error: "User does not exists" });
+            return res.status(400).json({ error: 'User does not exists' });
 
-        let spot = await Spot.findOne({ company: company });
+        let spot = await Spot.findOne({ company });
 
         if (!spot) {
             spot = await Spot.create({
                 user: user_id,
                 thumbnail: filename,
-                company: company,
-                price: price,
-                techs: techs.split(",").map(tech => tech.trim())
+                company,
+                price,
+                techs: techs.split(',').map(tech => tech.trim()),
             });
         }
 
@@ -31,9 +31,9 @@ module.exports = {
 
         if (!spot.length)
             return res.json({
-                message: "Sorry! But not exists company with this tech!!"
+                message: 'Sorry! But not exists company with this tech!!',
             });
 
         return res.json(spot);
-    }
+    },
 };

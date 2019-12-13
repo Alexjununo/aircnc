@@ -9,8 +9,9 @@
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
+    "plugins": ["prettier"],
     "rules": {
-        "comma-dangle": ["error", "always-multiline"],
+        "prettier/prettier": "error",
         "comma-spacing": ["error", { "before": false, "after": true }],
         "eol-last": ["error", "always"],
         "indent": ["error", 4, { "MemberExpression": 1 }],
